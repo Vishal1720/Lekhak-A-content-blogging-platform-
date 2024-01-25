@@ -49,7 +49,7 @@ $uid = $_SESSION["user_id"];
 </head>
 <body>
     <div class="main"><h1>Lekhak</h1></div>
-    <nav class="navbar"><a href="home.html">Home</a><a href="stories.php">Stories</a><a href="poems.php">Poems</a><a href="write1.php">Write</a><?php echo "<p id='userpara'>$uid</p>"?></nav>
+    <nav class="navbar"><a href="home.php">Home</a><a href="stories.php">Stories</a><a href="poems.php">Poems</a><a href="write1.php">Write</a><?php echo "<p id='userpara'>$uid</p>"?></nav>
     <?php 
     $username="root";
     $server="localhost";

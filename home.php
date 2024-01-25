@@ -9,7 +9,7 @@
 <body>
     <div class="main"><h1>Lekhak</h1></div>
     <nav class="navbar">
-        <a href="home.html">Home</a>
+        <a href="home.php">Home</a>
         <a href="stories.php">Stories</a>
         <a href="poems.php">Poems</a>
         <a href="write1.php">Write</a></nav>
