@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+}
+.main{
+background-color: brown;
+color: aliceblue;
+padding:10px;
+text-align: center;
+font-size: 33px;
+}
+.navbar{
+padding: 10px;
+color: aliceblue;
+
+text-align: center;
+background-color: rgb(165, 61, 61);
+}
+a{
+text-decoration: none !important;
+margin-left: 15px;
+font-size: 32px;
+padding: 7px;
+font-weight: bold;
+border: 2px solid aliceblue;
+color:white;
+height: 100%;
+}
+body{
+    background-image: url("1.jpg");
+    background-size: cover;
+}
