@@ -33,6 +33,7 @@ $uid = $_SESSION["user_id"];
     }
     #title{
         font-size: 44px;
+        text-align: center;
     }
     #userpara{
             display: inline;

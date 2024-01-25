@@ -14,5 +14,9 @@
         <a href="poems.php">Poems</a>
         <a href="write1.php">Write</a></nav>
     
+        <div id="storydiv">
+            
+
+        </div>
 </body>
 </html>
