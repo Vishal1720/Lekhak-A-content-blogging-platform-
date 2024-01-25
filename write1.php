@@ -59,27 +59,31 @@ $sql="INSERT INTO `blogger`.`content`(`userid`, `descr`, `content`, `title`, `ca
             color: aliceblue;
             background-image: url("5.jpg");
             border-radius: 66px;
-            background-size: contain;
+            background-size: cover;
             
         }
         select,input,label,textarea{
             font-size: 24px;
             padding: 6px;
-            margin:10px 20px;
-            width:100%;
+            margin:10px 20px 10px 20px;
+            width:90%;
+            max-width: 850px;
         }
         #contentform{
             width: fit-content;
             margin:0 auto;
         }
-        
+        #content{
+            max-width: 727px;
+        }
     </style>
 </head>
 <body>
-    <div class="main"><h1>Blogger</h1></div>
+    <div class="main"><h1>Lekhak</h1></div>
     <nav class="navbar"><a href="home.html">Home</a>
-    <a href="stories.html">Stories</a><a href="poems.php">Poems</a>
-    <a href="">Write</a></nav><?php echo "<p id='userpara'>$uid</p>" ?>
+    <a href="stories.php">Stories</a><a href="poems.php">Poems</a>
+    <a href="write1.php">Write</a></nav>
+    <?php echo "<p id='userpara'>$uid</p>" ?>
     <form action="write1.php" method="post" class="write">
         <div id="contentform">
         <label for="category">Category</label>

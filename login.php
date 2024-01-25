@@ -16,7 +16,7 @@ $sql="SELECT * FROM `blogger`.`regform` WHERE userid='$name' and password='$pass
 $res=$con->query($sql);
 if($res->num_rows > 0){
     $_SESSION["user_id"] = $name;
-    Header("Location: index.html");
+    Header("Location: home.html");
 }
 else
 {

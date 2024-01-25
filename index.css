@@ -5,6 +5,9 @@
 }
 .main{
 background-color: brown;
+background-image: url("main2.jpg");
+background-size: contain;
+
 color: aliceblue;
 padding:10px;
 text-align: center;
@@ -12,18 +15,26 @@ font-size: 33px;
 }
 .navbar{
 padding: 10px;
-color: aliceblue;
+
 
 text-align: center;
-background-color: rgb(165, 61, 61);
+
+background-image: url("nav.jpg");
+background-size:cover;
+background-position: bottom;
+
+
 }
 a{
 text-decoration: none !important;
 margin-left: 15px;
-font-size: 32px;
-padding: 7px;
+font-size: 36px;
+padding: 10px;
 font-weight: bold;
 border: 2px solid aliceblue;
+/* background-image: url("5.jpg");
+background-size: contain; */
+background-color: black;
 color:white;
 height: 100%;
 }
@@ -31,3 +42,4 @@ body{
     background-image: url("1.jpg");
     background-size: cover;
 }
+
