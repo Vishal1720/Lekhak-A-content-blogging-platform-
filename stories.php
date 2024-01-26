@@ -12,7 +12,8 @@ $uid = $_SESSION["user_id"];
     <link rel="stylesheet" href="index.css">
 <style>
     p{
-        font-size:20px;
+        font-size:24px;
+        padding:3px;
         margin:10px;
             white-space: pre-line;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -23,7 +24,7 @@ $uid = $_SESSION["user_id"];
             height:600px;
             overflow: hidden;
             margin-left: 15%;
-            margin-top: 5%;
+            margin-top: 1.5%;
             color: white;
             padding: 10px;
             padding-left: 20px;
@@ -40,16 +41,24 @@ $uid = $_SESSION["user_id"];
             position: absolute;
             width: fit-content;
             left: 80%;
-            top:15%;
+            top:13%;
             font-size: 35px;
             color: white !important;
-                           
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;               
         }
+        #highlight{
+    background-color: white;
+    color:black;
+    border: 2px solid black;
+}
 </style>
 </head>
 <body>
     <div class="main"><h1>Lekhak</h1></div>
-    <nav class="navbar"><a href="home.php">Home</a><a href="stories.php">Stories</a><a href="poems.php">Poems</a><a href="write1.php">Write</a><?php echo "<p id='userpara'>$uid</p>"?></nav>
+    <nav class="navbar"><a href="home.php">Home</a>
+    <a href="stories.php" id="highlight">Stories</a>
+    <a href="poems.php">Poems</a>
+    <a href="write1.php">Write</a><?php echo "<p id='userpara'>$uid</p>"?></nav>
     <?php 
     $username="root";
     $server="localhost";
@@ -70,9 +79,10 @@ $uid = $_SESSION["user_id"];
           {
             $heading=$row['title'];
             $content=$row['content'];
+            $user=$row['userid'];
             echo "   <div class='story'>
             <h1 id='title'>$heading</h1>
-            <h2>By $uid</h2>
+            <h2>By $user</h2>
             <p>$content</p>
         </div>";
           }  

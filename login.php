@@ -16,15 +16,7 @@ $sql="SELECT * FROM `blogger`.`regform` WHERE userid='$name' and password='$pass
 $res=$con->query($sql);
 if($res->num_rows > 0){
     $_SESSION["user_id"] = $name;
-    Header("Location: home.html");
+    Header("Location: home.php");
 }
-else
-{
-    
-    Header("Location:signinlog.html");
-    echo "<script>alert('User $name not found');</script>";
-    exit();
-   
-    
-}
+
 ?>

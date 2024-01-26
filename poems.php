@@ -13,7 +13,8 @@ $uid = $_SESSION["user_id"];
         #poem{
             width: 50%;
             margin-left: 25%;
-            margin-top: 5%;
+            margin-top: 1%;
+           
             color: white;
             padding: 10px;
             padding-left: 20px;
@@ -28,6 +29,7 @@ $uid = $_SESSION["user_id"];
             top:15%;
             font-size: 35px;
             color: white !important;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                            
         }
         #content{
@@ -37,13 +39,22 @@ $uid = $_SESSION["user_id"];
         }
         h1{
             text-align: center;
+         
         }
+        #poemhead{
+            font-size: 45px;
+        }
+        #highlight{
+    background-color: white;
+    color:black;
+    border: 2px solid black;
+}
     </style>
 </head>
 <body>
 <div class="main"><h1>Lekhak</h1></div>
     <nav class="navbar"><a href="home.php">Home</a>
-    <a href="stories.php">Stories</a><a href="poems.php">Poems</a>
+    <a href="stories.php">Stories</a><a href="poems.php" id="highlight">Poems</a>
     <a href="write1.php">Write</a></nav><?php echo "<p id='userpara'>$uid</p>" ?><?php
 
 $server="localhost";
@@ -66,7 +77,7 @@ if($result->num_rows>0)
         $head=$row['title'];
         $content=$row['content'];
         $writer=$row['userid'];
-        echo"<div id='poem'><h1>$head</h1><h2>By $writer</h2>
+        echo"<div id='poem'><h1 id='poemhead'>$head</h1><h2>By $writer</h2>
         <p id='content'>$content</p></div>";
     }
 }

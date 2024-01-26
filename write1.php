@@ -38,7 +38,7 @@ $sql="INSERT INTO `blogger`.`content`(`userid`, `descr`, `content`, `title`, `ca
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
     <style>
-        p{
+        #userpara{
             display: inline;
             position: absolute;
             width: fit-content;
@@ -46,11 +46,12 @@ $sql="INSERT INTO `blogger`.`content`(`userid`, `descr`, `content`, `title`, `ca
             top:15%;
             font-size: 35px;
             color: white !important;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                            
         }
         form{
             margin-left:20%;
-            margin-top:9px;
+            margin-top:13px;
             align-items: center;
             justify-content: center;
             
@@ -74,15 +75,20 @@ $sql="INSERT INTO `blogger`.`content`(`userid`, `descr`, `content`, `title`, `ca
             margin:0 auto;
         }
         #content{
-            max-width: 727px;
+            max-width: 799px;
         }
+        #highlight{
+    background-color: white;
+    color:black;
+    border: 2px solid black;
+}
     </style>
 </head>
 <body>
     <div class="main"><h1>Lekhak</h1></div>
     <nav class="navbar"><a href="home.php">Home</a>
     <a href="stories.php">Stories</a><a href="poems.php">Poems</a>
-    <a href="write1.php">Write</a></nav>
+    <a href="write1.php" id="highlight">Write</a></nav>
     <?php echo "<p id='userpara'>$uid</p>" ?>
     <form action="write1.php" method="post" class="write">
         <div id="contentform">

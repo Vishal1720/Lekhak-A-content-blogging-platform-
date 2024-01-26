@@ -19,7 +19,7 @@ p{
     font-size:22px;
 }
 #storytitle{
-font-size: 50px;
+font-size: 45px;
 text-align: center;
 margin-top:26px;
 }
@@ -54,6 +54,7 @@ margin-top:26px;
             top:15%;
             font-size: 35px;
             color: white !important;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
                            
         }
         #storybg{
@@ -66,12 +67,17 @@ margin-top:26px;
     background-size: cover;
     background-position: center;
         }
+        #highlight{
+    background-color: white;
+    color:black;
+    border: 2px solid black;
+}
     </style>
 </head>
 <body>
     <div class="main"><h1>Lekhak</h1></div>
     <nav class="navbar">
-        <a href="home.php">Home</a>
+        <a href="home.php" id="highlight">Home</a>
         <a href="stories.php">Stories</a>
         <a href="poems.php">Poems</a>
         <a href="write1.php">Write</a><?php echo "<p id='userpara'>$uid</p>"?></nav>
