@@ -20,6 +20,8 @@ $sql="INSERT INTO `blogger`.`regform`(`userid`, `password`, `gender`, `email`, `
 
 if($con->query($sql))
 {
-    echo "Registered";
+    session_start();
+   
+    echo "<script>alert('Account created successfully!'); window.location.href = 'index.html';</script>";
 }
 ?>

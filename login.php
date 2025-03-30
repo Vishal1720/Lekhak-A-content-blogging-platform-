@@ -18,5 +18,8 @@ if($res->num_rows > 0){
     $_SESSION["user_id"] = $name;
     Header("Location: home.php");
 }
+else{
+    echo "<script>alert('Invalid username or password'); window.location.href = 'index.html';</script>";
+}
 
 ?>
