@@ -1,29 +1,30 @@
 <?php
 if(isset($_POST['title']))
 {
-$server="localhost";
-$username="root";
-$pass="";
-$con=mysqli_connect($server,$username,$pass);
-if(!$con)
-{
-    die("Couldn't connect to server: " . $con->error);
-}
+include 'dbconnect.php';
 
 $title=$_POST['title'];
 $content=$_POST['content'];
 $description=$_POST['desc'];
 $category=$_POST['category'];
 }
+
 session_start();
+if(!isset($_SESSION["user_id"]))
+{
+    header("Location: index.html");
+}
 $uid = $_SESSION["user_id"];
  
 if(isset($_POST['title']))
 {
-$sql="INSERT INTO `blogger`.`content`(`userid`, `descr`, `content`, `title`, `category`)
-VALUES ('$uid','$description','$content','$title','$category')";
 
-if($con->query($sql))
+$sql="";
+
+$stmt = $con->prepare("INSERT INTO `content`(`userid`, `descr`, `content`, `title`, `category`)
+VALUES (?,?,?,?,?)");
+$stmt->bind_param("sssss", $uid, $description, $content, $title, $category); // "isi" -> integer, string, integer
+if($stmt->execute())
 {
     echo "<script>alert('Published successfully!');</script>";
 }

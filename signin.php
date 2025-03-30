@@ -1,14 +1,6 @@
 <?php
-$server="localhost";
-$username="root";
-$password="";
+include 'dbconnect.php';
 
-$con=mysqli_connect($server,$username,$password);
-if(!$con)
-{
-    die($con ->error);
-}
-echo "Connection established";
 
 $name=$_POST['name'];
 $pass=$_POST['pass'];
@@ -16,12 +8,13 @@ $gender=$_POST['gender'];
 $email=$_POST['email'];
 $phone=$_POST['phone'];
 
-$sql="INSERT INTO `blogger`.`regform`(`userid`, `password`, `gender`, `email`, `phone`) VALUES ('$name','$pass','$gender','$email','$phone')";
-
-if($con->query($sql))
+$sql="INSERT INTO `regform`(`userid`, `password`, `gender`, `email`, `phone`) 
+VALUES (?,?,?,?,?)";
+$stmt=$con->prepare($sql);
+$stmt->bind_param("sssss", $name, $pass, $gender, $email, $phone);
+if($stmt->execute())
 {
-    session_start();
-   
+
     echo "<script>alert('Account created successfully!'); window.location.href = 'index.html';</script>";
 }
 ?>

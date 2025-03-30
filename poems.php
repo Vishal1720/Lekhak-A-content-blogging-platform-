@@ -1,5 +1,9 @@
 <?php 
 session_start();
+if(!isset($_SESSION["user_id"]))
+{
+    header("Location: index.html");
+}
 $uid = $_SESSION["user_id"];
 ?>
 <!DOCTYPE html>
@@ -60,16 +64,8 @@ $uid = $_SESSION["user_id"];
         
         <div class="row justify-content-center">
             <?php
-            $server="localhost";
-            $username="root";
-            $pass="";
-
-            $con=mysqli_connect($server,$username,$pass);
-            if(!$con)
-            {
-               echo "Connection failed";
-            }
-            $sql="SELECT * FROM `blogger`.`content` WHERE category='poem'";
+            include 'dbconnect.php';
+            $sql="SELECT * FROM `content` WHERE category='poem'";
 
             $result=$con->query($sql);
 

@@ -60,19 +60,13 @@ $uid = $_SESSION["user_id"];
         
         <div class="row">
             <?php 
-            $username="root";
-            $server="localhost";
-            $pass="";
-
-            $con=mysqli_connect($server,$username,$pass);
-            if(!$con)
-            {
-                die("Couldn't connect to server");
-            }
-            else{
+            include 'dbconnect.php';
+          
                 
-                $sql="SELECT * FROM `blogger`.`content` WHERE category='story'";
-                $res=$con->query($sql);
+                $sql="SELECT * FROM `content` WHERE category='story'";
+                $stmt=$con->prepare($sql);
+                $stmt->execute();
+                $res=$stmt->get_result();
                 if($res->num_rows>0)
                 {
                   foreach($res as $row)
@@ -108,7 +102,7 @@ $uid = $_SESSION["user_id"];
                         </div>
                     </div>";
                 }
-            }
+            
             ?>
         </div>
     </div>
