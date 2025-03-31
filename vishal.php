@@ -9,6 +9,17 @@ if (isset($_GET['json_test'])) {
     exit;
 }
 
+// Handle site logout
+if(isset($_POST['logout'])) {
+    // Destroy the session
+    session_unset();
+    session_destroy();
+    
+    // Redirect to login page
+    header("Location: index.html");
+    exit;
+}
+
 // Check for messages in URL parameters
 $show_message = '';
 if(isset($_GET['status'])) {
@@ -77,7 +88,7 @@ if($password_verified && isset($_POST['action'])) {
         } else {
             echo "<script>alert('Failed to delete user.');</script>";
         }
-    } 
+    }
     
     // Content management actions
     elseif($action == 'delete_content') {
@@ -347,6 +358,11 @@ $error_message = '';
                 <a href="home.php" class="btn btn-outline-light btn-sm me-2">
                     <i class="fas fa-home me-1"></i>Back to Site
                 </a>
+                <form method="post" class="d-inline">
+                    <button type="submit" name="logout" class="btn btn-danger btn-sm me-2">
+                        <i class="fas fa-sign-out-alt me-1"></i>Logout
+                    </button>
+                </form>
                 <?php echo "<span id='userpara' class='navbar-text'>$uid</span>"?>
             </div>
         </div>
@@ -506,7 +522,7 @@ $error_message = '';
                                                     data-gender="'.htmlspecialchars($user['gender']).'"
                                                     data-phone="'.htmlspecialchars($user['phone']).'">
                                                     <i class="fas fa-edit"></i> Edit
-                                                </button>
+                                                    </button>
                                                 <form method="post" class="d-inline" onsubmit="return confirm(\'Are you sure you want to delete this user? This action cannot be undone.\')">
                                                     <input type="hidden" name="action" value="delete_user">
                                                     <input type="hidden" name="user_id" value="'.$user_id.'">
