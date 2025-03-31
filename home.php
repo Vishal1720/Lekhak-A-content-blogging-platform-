@@ -76,7 +76,7 @@ $uid = $_SESSION["user_id"];
                 $res = $stmt->get_result();
                 
                 if($res->num_rows > 0){
-                    foreach($res as $row){
+        foreach($res as $row){
                         $storytitle = $row['title'];
                         $storydesc = $row['descr'];
                         $uid = $row['userid'];
@@ -105,7 +105,7 @@ $uid = $_SESSION["user_id"];
                                     </div>
                                     <p class="card-subtitle mb-3"><i class="fas fa-user-edit me-1"></i>By '.htmlspecialchars($uid).'</p>
                                     <p class="card-text flex-grow-1">'.htmlspecialchars($storydesc).'</p>
-                                    <a href="'.strtolower($cat).'s.php" class="btn '.$outline_class.' mt-auto">
+                                    <a href="'.($cat == 'story' ? 'storie.php' : strtolower($cat).'s.php').'" class="btn '.$outline_class.' mt-auto">
                                         <i class="'.$icon_class.' me-1"></i>Read More
                                     </a>
                                 </div>
