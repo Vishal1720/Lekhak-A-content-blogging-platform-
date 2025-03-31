@@ -5,7 +5,7 @@ This is a website that allows you to write content such as stories ,poems and pu
 
 
 ## Demo
-![Demo](https://github.com/Vishal1720/VishalPortfolio/blob/7441b0bbdd2d440eb275041eaa0d478b4d62df79/lekhak/lekhak.gif)
+[Click here to see website in action](http://lekhak.great-site.net/)
 
 ## Features
 
